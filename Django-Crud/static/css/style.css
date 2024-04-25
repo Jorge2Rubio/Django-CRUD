@@ -1,0 +1,34 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.card-panel.teal:hover {
+  background-color: #26a69a; /* Change this color to the desired hover color */
+  cursor: pointer; /* Optional: Changes the cursor to a pointer on hover */
+}
+
+.collapsible .collapsible-body {
+  padding-left: 20px;
+}

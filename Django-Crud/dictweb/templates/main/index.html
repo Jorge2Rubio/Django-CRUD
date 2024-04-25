@@ -1,0 +1,64 @@
+{% load static %}
+{% include 'main/navigation.html' %}
+
+<!-- ================================================================================================================================ -->
+ <!-- body -->
+<div class="container">
+    <div class="col s3">
+              <!-- Grey navigation panel -->
+      <ul id="slide-out" class="collapsible sidenav sidenav-fixed">
+        <h1>Logo Here</h1>
+        <li>
+          <a class="waves-effect waves-light btn-small" href="/add/">Add Students</a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light btn-small">View Students</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col s9">
+      <div class="row">
+        <div class="col s11 offset-s2">
+         <form action="" method="POST">
+          {% csrf_token %}
+           <table class="centered">
+               <thead>
+                <tr>
+                  <th>Students Name</th>
+                  <th>Students Address</th>
+                  <th>Students Email</th>
+                  <th>Students Contact</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for items in students %}
+              <tr>
+                <td>{{items.firstName}}</td>
+                <td>{{items.address}}</td>
+                <td>{{items.email}}</td>
+                <td>{{items.phone}}</td>
+                <td><a class="waves-effect waves-light btn" href="{% url 'update' items.id %}">Edit Student</a></td>
+                <td><button class="btn waves-effect waves-light" type="submit" name="deleteStudent" value={{items.id}}>Delete Student</button></td>
+              </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+         </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+    {% include 'main/footer.html' %}
+
+  </div>
+
+  {% include 'main/scripts.html' %}
+
+
+  
+  
+  </body>
+</html>

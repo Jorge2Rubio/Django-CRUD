@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'main/navigation.html' %}
+
+<!-- ================================================================================================================================ -->
+ <!-- body -->
+<div class="container">
+    <div class="col s3">
+              <!-- Grey navigation panel -->
+      <ul id="slide-out" class="collapsible sidenav sidenav-fixed">
+        <h1>Logo Here</h1>
+        <li>
+          <a class="waves-effect waves-light btn-small" href="/add/">Add Students</a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light btn-small">View Students</a>
+        </li>
+      </ul>
+    </div>
+
+  <div class="col s9">
+        <!-- Teal page content  -->
+        <div class="row">
+          <div class="col s9 offset-s3">
+  <!-- <footer class="page-footer orange" style="position:fixed;bottom:0;left:0;width:100%;">  if we decided that page should be-->
+ 
+     
+  <div class="row">
+    <form class="col s12" method="POST" action="">
+
+      {% csrf_token %}
+      {{form}}
+      <button class="btn waves-effect waves-light" type="submit" name="updateStudents">Update Student</button>
+    </form>
+  </div>
+</div>
+ 
+        </div>
+ 
+    </div>
+
+</div>
+
+    {% include 'main/footer.html' %}
+
+  </div>
+
+  {% include 'main/scripts.html' %}
+
+
+  
+  
+  </body>
+</html>
